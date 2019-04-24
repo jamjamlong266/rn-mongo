@@ -9,6 +9,13 @@ mongoose.connect(`mongodb+srv://${user}:${password}@${server}/${database}?retryW
 
 let UserSchema = new mongoose.Schema({
     name: {
-        type
+        type: String,
+        required: true
+    },
+    password: {
+        type: String,
+        required: true
     }
 })
+
+module.exports = mongoose.model('User', UserSchema);
